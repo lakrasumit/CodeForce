@@ -1,6 +1,7 @@
+from collections import deque
 n, m = map(int, input().split())
 arr1 = list(map(int, input().split()))
-arr = []
+arr = deque([])
 
 last = len(arr1) - 1
 
@@ -11,9 +12,9 @@ while arr:
     if arr[0][1] > m:
         arr.append((arr[0][0], arr[0][1] - m))
         last = arr[0][0]
-        arr.pop(0)
+        arr.popleft()
     else:
-        arr.pop(0)
+        arr.popleft()
 
 print(last + 1)
 
