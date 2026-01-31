@@ -8,11 +8,12 @@ using namespace std;
 
 int solve() {
     int a, b, n;
-    bool found = false;
+    
 
     cin >> a >> b >> n;
 
     while (n--) {
+        bool found = false;
         for (int i = 0; i < 10; i++) {
             int num = (a * 10) + i;
             if (num % b == 0) {
