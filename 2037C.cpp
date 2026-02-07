@@ -1,29 +1,27 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
-
-#define int long long
-#define vi vector<int>
-#define pb push_back
-#define all(x) (x).begin(), (x).end()
-
-
 
 void solve() {
     int n;
     cin >> n;
-
-    for (int i = 0; i < n; i++) {
-
+    if (n < 5) {
+        cout << -1 << endl;
+        return;
     }
+    for (int i = 1; i <= n; i += 2) {
+        if (i != 5) cout << i << " ";
+    }
+    cout << 5 << " " << 4 << " ";
+    for (int i = 2; i <= n; i += 2) {
+        if (i != 4) cout << i << " ";
+    }
+    cout << endl;
 }
-
-int32_t main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int t = 1;
+int main() {
+    int t;
     cin >> t;
-
     while (t--) {
         solve();
     }

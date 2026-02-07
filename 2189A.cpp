@@ -16,7 +16,7 @@ void solve() {
         if (x <= min(h, l)) C++;
     }
 
-    cout << min({A, B, (A + B - C) / 2}) << '\n';
+    cout << min({A, B, (A + B - C) / 2}) << endl;
 }
 
 int32_t main() {
