@@ -25,7 +25,7 @@ void solve() {
             sum1 -= v[left];
             left++;
         }
-
+        
         max1 = max(max1, i - left + 1);
     }
 
