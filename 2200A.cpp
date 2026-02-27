@@ -7,21 +7,18 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 
 void solve() {
-    int n, h, k;
+    
+    int n;
+    cin >> n;
 
-    cin >> n >> h >> k;
-
-    vector<int> v(n), prefix(n + 1, 0), suffix(n);
-
-    for (auto &t: v) cin >> t;
-
-    for (int i = 1; i <= n; i++) {
-        prefix[i] = prefix[i - 1] + v[i];
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
     }
 
-    for (int i = n - 1; i > -1; i--) {
-        // suffix[i] = suffix
-    }
+    int max1 = *max_element(v.begin(), v.end());
+
+    cout << count(v.begin(), v.end(), max1) << endl;
 
 }
 

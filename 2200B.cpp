@@ -6,24 +6,28 @@ using namespace std;
 #define pb push_back
 #define all(x) (x).begin(), (x).end()
 
+
 void solve() {
-    int n, h, k;
+    int n;
+    cin >> n;
 
-    cin >> n >> h >> k;
+    vector<int> v(n);
+    bool sorted = true;
 
-    vector<int> v(n), prefix(n + 1, 0), suffix(n);
-
-    for (auto &t: v) cin >> t;
-
-    for (int i = 1; i <= n; i++) {
-        prefix[i] = prefix[i - 1] + v[i];
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+        if (i > 0 && v[i-1] > v[i]) {
+            sorted = false;
+        }
     }
 
-    for (int i = n - 1; i > -1; i--) {
-        // suffix[i] = suffix
+    if (sorted) {
+        cout << n << endl;
+    } else {
+        cout << 1 << endl;
     }
-
 }
+
 
 int32_t main() {
     ios_base::sync_with_stdio(false);

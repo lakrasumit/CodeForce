@@ -7,22 +7,29 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 
 void solve() {
-    int n, h, k;
+    int n;
+    cin >> n;
 
-    cin >> n >> h >> k;
+    string a;
+    cin >> a;
 
-    vector<int> v(n), prefix(n + 1, 0), suffix(n);
+    stack<char> s;
 
-    for (auto &t: v) cin >> t;
+    for (int i = 0; i < n; i++) {
 
-    for (int i = 1; i <= n; i++) {
-        prefix[i] = prefix[i - 1] + v[i];
+        if (!s.empty() && ((s.top() == a[i]))) {
+            s.pop();
+        } else {
+            s.push(a[i]);
+        }
+
     }
 
-    for (int i = n - 1; i > -1; i--) {
-        // suffix[i] = suffix
+    if (!s.empty()) {
+        cout << "NO" << endl;
+    } else {
+        cout << "YES" << endl;
     }
-
 }
 
 int32_t main() {

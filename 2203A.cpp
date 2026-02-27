@@ -7,22 +7,10 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 
 void solve() {
-    int n, h, k;
+    int n, m, d;
+    cin >> n >> m >> d;
 
-    cin >> n >> h >> k;
-
-    vector<int> v(n), prefix(n + 1, 0), suffix(n);
-
-    for (auto &t: v) cin >> t;
-
-    for (int i = 1; i <= n; i++) {
-        prefix[i] = prefix[i - 1] + v[i];
-    }
-
-    for (int i = n - 1; i > -1; i--) {
-        // suffix[i] = suffix
-    }
-
+    cout << (n + (d/m + 1) - 1) / (d/m + 1) << endl;
 }
 
 int32_t main() {
