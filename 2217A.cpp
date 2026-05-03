@@ -7,12 +7,19 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 
 void solve() {
-    int n, m, d;
+    int n, k;
 
-    
-    cin >> n >> m >> d;
+    cin >> n >> k;
 
-    cout << (n + (d/m + 1) - 1) / (d/m + 1) << endl;
+    vector<int> v(n);
+    set<int> s;
+
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+        s.insert(v[i]);
+    }
+
+    cout << ((s.size() == 1) ? "YES": "NO") << endl;
 }
 
 int32_t main() {

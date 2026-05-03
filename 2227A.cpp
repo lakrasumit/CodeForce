@@ -7,12 +7,13 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 
 void solve() {
-    int n, m, d;
+    int x, y;
+    cin >> x >> y;
 
-    
-    cin >> n >> m >> d;
+    int i = (x % 2) + (y % 2);
 
-    cout << (n + (d/m + 1) - 1) / (d/m + 1) << endl;
+    if ((i == 0) || (i == 1)) cout << "YES" << endl;
+    else cout << "NO" << endl;
 }
 
 int32_t main() {

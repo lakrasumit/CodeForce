@@ -7,12 +7,21 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 
 void solve() {
-    int n, m, d;
+    vector<int> v(7);
 
-    
-    cin >> n >> m >> d;
+    for (int i = 0; i < 7; i++) {
+        cin >> v[i];
+    }
 
-    cout << (n + (d/m + 1) - 1) / (d/m + 1) << endl;
+    sort(v.begin(), v.end());
+
+    int sum1 = 0;
+    for (int i = 0; i < 6; i++) {
+        sum1 += -1 * v[i];
+    }
+    sum1 += v[6];
+
+    cout << sum1 << endl;
 }
 
 int32_t main() {

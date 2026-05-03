@@ -10,22 +10,29 @@ void solve() {
     int n;
     cin >> n;
 
-    bool a = true;
-
     vector<int> v(n);
-    for (int &t: v) cin >> t;
-
-    for (int i = 0; i < n - 2; i++) {        
-        if ((v[i] + 2 == v[i + 2]) || (v[i] - 2 == v[i + 2])) {
-            swap(v[i], v[i + 2]);
-        } else {
-            a = false;
-        }
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
     }
-    
 
-    cout << ((a) ? "YES": "NO") << "\n";
-    
+    int sum1 = 0;
+    int i = 0;
+
+    while (i < v.size()) {
+
+        int j = i + 1;
+        int sum2 = 1;
+        sum2 *= v[i];
+        while ((j < v.size()) && (v[j] >= v[j - 1])) {
+            sum2 *= v[j];
+            j++;
+        }
+
+        sum1 += sum2;
+        i = j;
+    }
+
+    cout << sum1 << endl;
 }
 
 int32_t main() {

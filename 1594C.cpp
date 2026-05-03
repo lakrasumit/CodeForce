@@ -7,15 +7,41 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 
 void solve() {
-    int n; char a;
+    int n, odd = 0, even = 0;
+    char a;
     cin >> n >> a;
 
     cin.ignore();
+    string b;   
 
-    string b;
     cin >> b;
 
-    
+    for (int i = 0; i < n; i++) {
+
+        if (i % 2 == 0) {
+            if (b[i] != a) {
+            even++;
+        }
+    } else {
+        if (b[i] != a) {
+            odd++;
+        }
+    }
+
+    if (!even && !odd) {
+        cout << 0 << endl;
+        return;
+    }
+
+    if (!even || !odd) cout << 1 << endl;
+    else {
+        if (even > odd) {
+        cout << 2 << " " << 3 << endl;
+        } else {
+            cout << 3 << " " << 2 << endl;
+        }
+    }
+}
 }
 
 int32_t main() {
